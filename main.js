@@ -1,7 +1,10 @@
+const nameOutputEl = document.getElementById("name-output");
+const clearNamesEl = document.getElementById("clear-output");
+
 console.log("loaded")
 let names = ["Michele", "Denise", "Aubrie", "Jack", "Phil",
     "Lee", "Same", "John", "Frank", "Smith"];
-const getNamesButton = document.getElementById("namesRandom");
+
 
 function generateRandomNames() {
     const randomNames = []
@@ -9,11 +12,15 @@ function generateRandomNames() {
         const fournames = names[Math.floor(Math.random() * names.length)];
         randomNames.push(fournames)
     }
-    return randomNames
+    nameOutputEl.textContent = randomNames 
+    }
+
+function clearNames() {
+    document.getElementById(fournames)
 }
 console.log(generateRandomNames())
 
-getNamesButton.onclick = generateRandomNames;
+
 
 
 /* let names = ["Michele", "Denise", "Aubrie", "Jack", "Phil", "Lee", "Same", "John", "Frank", "Smith"];
@@ -26,3 +33,6 @@ function randomFunc(names) {
     return randomNames
 }
 console.log(randomFunc(names)); */
+
+nameOutputEl.onclick = generateRandomNames;
+clearNamesEl.onclick = clearNames;
